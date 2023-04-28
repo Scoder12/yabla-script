@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for yabla-script on 2023-04-27T22:16:14-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "yabla-script"
+primary_region = "lax"
+
+[env]
+  DB_FILENAME = "/data/db.sqlite3"
+  UVICORN_HOST = "0.0.0.0"
+  UVICORN_PORT = "8080"
+
+[[mounts]]
+  source = "db"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true

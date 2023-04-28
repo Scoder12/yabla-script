@@ -1,0 +1,3 @@
+fly.toml
+db.sqlite3
+.env
